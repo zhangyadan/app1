@@ -1,6 +1,7 @@
 package com.example.myapp;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initFrag();
     }
 
+
     private void initFrag() {
         fm = getSupportFragmentManager();
         final FragmentTransaction tran = fm.beginTransaction();
@@ -68,6 +70,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBt1.setOnClickListener(this);
         mBt2 = (Button) findViewById(R.id.bt2);
         mBt2.setOnClickListener(this);
+
+
+        new CountDownTimer(2000,100){
+
+            @Override
+            public void onTick(long l) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
     }
 
     @Override

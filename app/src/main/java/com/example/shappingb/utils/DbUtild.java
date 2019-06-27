@@ -44,6 +44,12 @@ public class DbUtild {
         return daoSession.loadAll(DatasBean.class);
     }
 
+    public static DatasBean qurry(DatasBean datasBean){
+        final DaoSession daoSession = MyAppliction.getDaoSession();
+        return daoSession.queryBuilder(DatasBean.class)
+                .where(DatasBeanDao.Properties.Title.eq(datasBean.getTitle()))
+                .build().unique();
+    }
     public static DatasBean qurryone(DatasBean datasBean){
         final DaoSession daoSession = MyAppliction.getDaoSession();
         return daoSession.queryBuilder(DatasBean.class)
